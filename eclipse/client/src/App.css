@@ -1,0 +1,9 @@
+.Todo-input {
+  text-align: center;
+  /* background-color: aliceblue; */
+}
+
+.todo-item {
+  border: 3px solid lightblue;
+  margin-bottom: 20px;
+}
