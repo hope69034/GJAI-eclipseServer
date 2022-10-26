@@ -1,7 +1,7 @@
 {
-  "host":"localhost",
-  "user":"root",
-  "password":"a246987",
+  "host":"database-2.c7gpv2et9juo.us-east-1.rds.amazonaws.com",
+  "user":"admin",
+  "password":"eclipse2",
   "port":3306,
-  "database":"lifeconcierge"
+  "database":"eclipse1"
 }
