@@ -6,7 +6,7 @@ export default () => {
   const [userInfo, setUserInfo] = useState([]);
   const [toggleDelete, setToggleDelete] = useState(false);
   const callApi = async ()=>{
-    const response = await fetch('http://127.0.0.1:5000/lifeConcierge/api');
+    const response = await fetch('http://ec2-3-34-106-74.ap-northeast-2.compute.amazonaws.com:5000/lifeConcierge/api');
     const body = await response.json();
     return body;
   }

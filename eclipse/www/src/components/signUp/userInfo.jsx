@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export default ({ inputUserInfo, setInputUserInfo }) => {
   const addCustomer = () => {
-    const url = "/lifeConcierge/api/signup";
+    const url = "http://ec2-3-34-106-74.ap-northeast-2.compute.amazonaws.com:5000/lifeConcierge/api/signup";
     const formData = new FormData();
     formData.append("id", inputUserInfo);
     const data = {

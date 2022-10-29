@@ -28,7 +28,7 @@ router.post("/lifeConcierge/api/signUp", (req,res)=>{
 })
 
 router.get('/lifeConcierge/api', (req,res)=>{
-  conn.query('select * from CUSTOMER;', (err,rows)=>{
+  conn.query('select * from userinfo;', (err,rows)=>{
     if(!err) {
       res.send(rows);
     }else{
