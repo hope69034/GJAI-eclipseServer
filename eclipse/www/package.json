@@ -34,8 +34,8 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
-  
-  "homepage":  "http://hope69034.github.io/eclipseServer/eclipse/www/build/",
+
+  "homepage":  "https://hope69034.github.io/eclipseServer/",
  
 
 
