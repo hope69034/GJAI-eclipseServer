@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/www.eclipsermv.com/static/css/main.3a25150d.css",
-    "main.js": "/www.eclipsermv.com/static/js/main.9f3a43d7.js",
-    "static/js/787.b4fe6043.chunk.js": "/www.eclipsermv.com/static/js/787.b4fe6043.chunk.js",
-    "static/media/logo.svg": "/www.eclipsermv.com/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/www.eclipsermv.com/index.html",
-    "main.3a25150d.css.map": "/www.eclipsermv.com/static/css/main.3a25150d.css.map",
-    "main.9f3a43d7.js.map": "/www.eclipsermv.com/static/js/main.9f3a43d7.js.map",
-    "787.b4fe6043.chunk.js.map": "/www.eclipsermv.com/static/js/787.b4fe6043.chunk.js.map"
+    "main.css": "/eclipseServer/eclipse/www/build/static/css/main.3a25150d.css",
+    "main.js": "/eclipseServer/eclipse/www/build/static/js/main.2f45e996.js",
+    "static/js/787.b4fe6043.chunk.js": "/eclipseServer/eclipse/www/build/static/js/787.b4fe6043.chunk.js",
+    "static/media/logo.svg": "/eclipseServer/eclipse/www/build/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/eclipseServer/eclipse/www/build/index.html",
+    "main.3a25150d.css.map": "/eclipseServer/eclipse/www/build/static/css/main.3a25150d.css.map",
+    "main.2f45e996.js.map": "/eclipseServer/eclipse/www/build/static/js/main.2f45e996.js.map",
+    "787.b4fe6043.chunk.js.map": "/eclipseServer/eclipse/www/build/static/js/787.b4fe6043.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3a25150d.css",
-    "static/js/main.9f3a43d7.js"
+    "static/js/main.2f45e996.js"
   ]
 }
