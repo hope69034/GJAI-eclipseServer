@@ -1,50 +1,45 @@
-import React from 'react';
-import './App.css';
-import Customer from './components/Customer';
-import {Table, TableBody, TableHead, TableRow, TableCell} from'@mui/material';
+import NavBar from './components/NavBar';
+import Main from './pages/Main';
+import SignUp from './pages/SignUp';
+import Calendar from './pages/Calendar';
+import Test from './pages/Test';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import UserInfo from './pages/UserInfo';
+import UserChar from './pages/UserChar';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-
-
-class App extends React.Component {
-  state = {
-    customers: ""
-  }
-
-  componentDidMount() {
-    this.callApi()
-      .then(res => this.setState({customers: res}))
-      .catch(err => console.log(err));
-  }
-
-  callApi = async () => {
-    const response = await fetch('/api/customers');
+function App() {
+  const dispatch = useDispatch();
+  const callApi = async () => {
+    const response = await fetch("/lifeConcierge/api");
     const body = await response.json();
     return body;
   }
+  
+  useEffect(()=>{
+    callApi()
+    .then(res=>{
+      dispatch({type:"SESSION", session:res})
+    })
+    .catch(err=>{console.log(err)})
+  });
 
-
-
-  render() {
-    return(
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>번호</TableCell>
-              <TableCell>이름</TableCell>
-              <TableCell>사진</TableCell>
-              <TableCell>생년월일</TableCell>
-              <TableCell>성별</TableCell>
-              <TableCell>직업</TableCell>
-            </TableRow>            
-          </TableHead>
-          <TableBody>
-            {this.state.customers ? this.state.customers.map((index)=>{return(<Customer name={index.name} id={index.id} birthday={index.birthday} image={index.image} gender={index.gender} job={index.job}/>);})
-            : ""}
-          </TableBody>
-        </Table>
-    );
-  }
+  return (
+    <div className="App">
+      <BrowserRouter>
+      <NavBar/>
+        <Routes>
+          <Route path="/" element={<Main/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/calendar" element={<Calendar/>}/>
+          <Route path="/test" element={<Test/>}/>
+          <Route path="/userInfo" element={<UserInfo/>}/>
+          <Route path="/userChar" element={<UserChar/>}/>
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
-
 
 export default App;
