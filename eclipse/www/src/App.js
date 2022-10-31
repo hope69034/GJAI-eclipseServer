@@ -1,52 +1,45 @@
-// import
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
+import NavBar from './components/NavBar';
 
-// import  compo
-/* import Header from './components/00.Header.js' */
-import Door from "./components/01.Door";
-import Service from "./components/02.Service";
-import Proposal from "./components/03.Proposal";
-import Presentation from "./components/04.Presentation";
-import Introduction from "./components/05.Introduction";
-
-import NavBar from "./components/navBar";
-/* import NavBar2 from './components/navBar2'; */
-
-import Main from "./pages/main";
-import SignUp from "./pages/signUp";
-import Calendar from "./pages/calendar";
-
-import UserInfo from "./pages/userInfo";
-import UserChar from "./pages/userChar";
-
-/* import {  BrowserRouter } from 'react-router-dom'; */
+import Main from './pages/Main';
+import SignUp from './pages/SignUp';
+import Calendar from './pages/Calendar';
+import Test from './pages/Test';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import UserInfo from './pages/UserInfo';
+import UserChar from './pages/UserChar';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 function App() {
+  const dispatch = useDispatch();
+  const callApi = async () => {
+    const response = await fetch("/lifeConcierge/api");
+    const body = await response.json();
+    return body;
+  }
+  
+  useEffect(()=>{
+    callApi()
+    .then(res=>{
+      dispatch({type:"SESSION", session:res})
+    })
+    .catch(err=>{console.log(err)})
+  });
+
   return (
-    <>
-      {/*  <NavBar2/> */}
-      {/* <Header></Header> */}
-
-      <NavBar />
-
-      <Routes>
-
-        <Route path="/" element={<Door></Door>}></Route>
-
-
-        <Route path="/Service" element={<Service></Service>}></Route>
-        <Route path="/Proposal" element={<Proposal></Proposal>}></Route>
-        <Route path="/Presentation" element={<Presentation></Presentation>}></Route>
-        <Route path="/Introduction" element={<Introduction></Introduction>}></Route>
-
-        <Route path="/main" element={<Main></Main>} />
-        <Route path="/signup" element={<SignUp></SignUp>} />
-        <Route path="/calendar" element={<Calendar></Calendar>} />
-        <Route path="/userInfo" element={<UserInfo></UserInfo>} />
-        <Route path="/userChar" element={<UserChar></UserChar>}></Route>
-      </Routes>
-    </>
+    <div className="App">
+      <BrowserRouter>
+      <NavBar/>
+        <Routes>
+          <Route path="/" element={<Main/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/calendar" element={<Calendar/>}/>
+          <Route path="/test" element={<Test/>}/>
+          <Route path="/userInfo" element={<UserInfo/>}/>
+          <Route path="/userChar" element={<UserChar/>}/>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
